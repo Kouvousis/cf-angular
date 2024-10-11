@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { Person } from './shared/interfaces/person';
+import { PersonTableComponent } from './components/person-table/person-table.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, PersonTableComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
@@ -18,14 +20,14 @@ export class AppComponent {
     age: 28,
   };
 
-  person0 = {
+  person0: Person = {
     givenName: 'John',
     surName: 'Doe',
     email: 'john@aueb.gr',
     age: 23,
   };
 
-  person1 = {
+  person1: Person = {
     givenName: 'Jane',
     surName: 'Doe',
     email: 'jane@aueb.gr',
