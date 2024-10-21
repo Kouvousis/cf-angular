@@ -3,6 +3,8 @@ import { ComponentInputExampleComponent } from './components/component-input-exa
 import { WelcomeComponent } from './components/welcome/welcome.component';
 import { EventBindExampleComponent } from './components/event-bind-example/event-bind-example.component';
 import { ForDirectiveExampleComponent } from './components/for-directive-example/for-directive-example.component';
+import { SimpleDataTableComponent } from './components/simple-data-table/simple-data-table.component';
+import { ComponentOutputExampleComponent } from './components/component-output-example/component-output-example.component';
 
 export const routes: Routes = [
   {
@@ -18,6 +20,10 @@ export const routes: Routes = [
     component: EventBindExampleComponent,
   },
   {
+    path: 'simple-data-table',
+    component: SimpleDataTableComponent,
+  },
+  {
     path: 'welcome',
     component: WelcomeComponent,
   },
@@ -25,5 +31,9 @@ export const routes: Routes = [
     path: '',
     redirectTo: '/welcome',
     pathMatch: 'full',
+  },
+  {
+    path: 'component-output-example',
+    component: ComponentOutputExampleComponent,
   },
 ];
