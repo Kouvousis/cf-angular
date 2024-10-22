@@ -5,6 +5,7 @@ import { EventBindExampleComponent } from './components/event-bind-example/event
 import { ForDirectiveExampleComponent } from './components/for-directive-example/for-directive-example.component';
 import { SimpleDataTableComponent } from './components/simple-data-table/simple-data-table.component';
 import { ComponentOutputExampleComponent } from './components/component-output-example/component-output-example.component';
+import { TemplateDrivenFormsComponent } from './components/template-driven-forms/template-driven-forms.component';
 
 export const routes: Routes = [
   {
@@ -35,5 +36,9 @@ export const routes: Routes = [
   {
     path: 'component-output-example',
     component: ComponentOutputExampleComponent,
+  },
+  {
+    path: 'template-driven-form',
+    component: TemplateDrivenFormsComponent,
   },
 ];

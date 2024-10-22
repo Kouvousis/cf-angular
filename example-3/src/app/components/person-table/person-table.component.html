@@ -1,22 +1,26 @@
-@if (!person) {
+@if (!person && !ePerson) {
 <div class="alert alert-warning text-center">No person details</div>
 } @else {
 <table class="table table-bordered w-50">
   <tr>
     <td class="fw-semibold">First Name:</td>
-    <td class="ps-2">{{ person.givenName }}</td>
+    <td class="ps-2">{{ person?.givenName || ePerson?.givenName }}</td>
   </tr>
   <tr>
     <td class="fw-semibold">SurName:</td>
-    <td class="ps-2">{{ person.surName }}</td>
+    <td class="ps-2">{{ person?.surName || ePerson?.surName }}</td>
   </tr>
   <tr>
     <td class="fw-semibold">Email:</td>
-    <td class="ps-2">{{ person.email }}</td>
+    <td class="ps-2">{{ person?.email || ePerson?.email }}</td>
   </tr>
   <tr>
     <td class="fw-semibold">Age:</td>
-    <td class="ps-2">{{ person.age }}</td>
+    <td class="ps-2">{{ person?.age || ePerson?.age }}</td>
+  </tr>
+  <tr>
+    <td class="fw-semibold">Address:</td>
+    <td class="ps-2">{{ person?.address || ePerson?.address }}</td>
   </tr>
 </table>
 }
