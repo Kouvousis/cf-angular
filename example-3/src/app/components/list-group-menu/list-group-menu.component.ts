@@ -39,5 +39,9 @@ export class ListGroupMenuComponent {
       text: 'Reactive Forms',
       routerLink: 'reactive-forms-example',
     },
+    {
+      text: 'Http Client Example',
+      routerLink: 'http-client-example',
+    },
   ];
 }
