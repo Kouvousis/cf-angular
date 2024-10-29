@@ -8,6 +8,7 @@ import { ComponentOutputExampleComponent } from './components/component-output-e
 import { TemplateDrivenFormsComponent } from './components/template-driven-forms/template-driven-forms.component';
 import { ReactiveFormsExampleComponent } from './components/reactive-forms-example/reactive-forms-example.component';
 import { HttpClientExampleComponent } from './components/http-client-example/http-client-example.component';
+import { UserRegistrationComponent } from './components/user-registration/user-registration.component';
 
 export const routes: Routes = [
   {
@@ -50,5 +51,9 @@ export const routes: Routes = [
   {
     path: 'http-client-example',
     component: HttpClientExampleComponent,
+  },
+  {
+    path: 'user-registration',
+    component: UserRegistrationComponent,
   },
 ];
