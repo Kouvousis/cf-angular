@@ -4,7 +4,7 @@
   >
   @if (user()) {
   <span class="me-3 d-flex gap-2 text-light">
-    Welcome, {{ user()?.fullName }}
+    Welcome, {{ user()?.fullname }}
     <mat-icon role="button" (click)="logout()">logout</mat-icon>
   </span>
   } @else {

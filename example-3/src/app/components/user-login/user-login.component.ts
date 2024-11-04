@@ -42,7 +42,7 @@ export class UserLoginComponent {
         console.log(decodedTokenSubject);
 
         this.userService.user.set({
-          fullName: decodedTokenSubject.fullName,
+          fullname: decodedTokenSubject.fullname,
           email: decodedTokenSubject.email,
         });
         this.router.navigate(['restricted-content-example']);

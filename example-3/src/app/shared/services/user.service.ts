@@ -23,13 +23,13 @@ export class UserService {
         .sub as unknown as LoggedInUser;
 
       this.user.set({
-        fullName: decodedTokenSubject.fullName,
+        fullname: decodedTokenSubject.fullname,
         email: decodedTokenSubject.email,
       });
     }
     effect(() => {
       if (this.user()) {
-        console.log('User logged in: ', this.user()?.fullName);
+        console.log('User logged in: ', this.user()?.fullname);
       } else {
         console.log('No user logged in');
       }

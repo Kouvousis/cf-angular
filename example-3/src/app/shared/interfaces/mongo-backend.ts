@@ -11,6 +11,6 @@ export interface Credentials {
 }
 
 export interface LoggedInUser {
-  fullName: string;
+  fullname: string;
   email: string;
 }
