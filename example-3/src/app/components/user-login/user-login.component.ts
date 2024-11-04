@@ -8,6 +8,8 @@ import {
 import { Credentials } from '../../shared/interfaces/mongo-backend';
 import { UserService } from '../../shared/services/user.service';
 import { Router } from '@angular/router';
+import { LoggedInUser } from '../../shared/interfaces/mongo-backend';
+import { jwtDecode } from 'jwt-decode';
 
 @Component({
   selector: 'app-user-login',
@@ -20,6 +22,8 @@ export class UserLoginComponent {
   userService = inject(UserService);
   router = inject(Router);
 
+  invalidLogin = false;
+
   form = new FormGroup({
     email: new FormControl('', [Validators.required, Validators.email]),
     password: new FormControl('', Validators.required),
@@ -31,10 +35,21 @@ export class UserLoginComponent {
       next: (response) => {
         const access_token = response.access_token;
         console.log(access_token);
+        localStorage.setItem('access_token', access_token);
+
+        const decodedTokenSubject = jwtDecode(access_token)
+          .sub as unknown as LoggedInUser;
+        console.log(decodedTokenSubject);
+
+        this.userService.user.set({
+          fullName: decodedTokenSubject.fullName,
+          email: decodedTokenSubject.email,
+        });
         this.router.navigate(['restricted-content-example']);
       },
       error: (error) => {
         console.log('Login Error', error);
+        this.invalidLogin = true;
       },
     });
   }
