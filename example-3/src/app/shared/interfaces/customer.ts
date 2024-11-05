@@ -6,7 +6,8 @@ export interface PhoneNumber {
 export interface Address {
   street: string;
   city: string;
-  zipcode: string;
+  number: string;
+  zipCode: string;
 }
 
 export interface Customer {
